@@ -299,3 +299,186 @@ a {
     padding: 80px 0;
   }
 }
+  /* =========================
+   Projects Page
+   ========================= */
+
+.projects-page {
+  min-height: 100vh;
+  padding: 140px 24px 120px;
+}
+
+.projects-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 0 80px;
+}
+
+.projects-hero .section-label,
+.project-category {
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.projects-hero h1 {
+  margin: 24px 0;
+
+  font-size: clamp(64px, 9vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+}
+
+.projects-hero p {
+  max-width: 600px;
+
+  color: #999;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* Project Grid */
+
+.projects-list {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Project Card */
+
+.project-card {
+  min-height: 430px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 32px;
+
+  border: 1px solid #252525;
+  background: #0b0b0b;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #555;
+  background: #101010;
+}
+
+.project-number {
+  color: #555;
+
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.project-content {
+  margin-top: auto;
+}
+
+.project-category {
+  margin-bottom: 14px;
+}
+
+.project-content h2 {
+  margin: 0 0 20px;
+
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.project-content p {
+  max-width: 520px;
+
+  margin-bottom: 28px;
+
+  color: #999;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Technologies */
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 28px;
+}
+
+.project-technologies span {
+  padding: 7px 10px;
+
+  border: 1px solid #333;
+
+  color: #aaa;
+
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+/* Button */
+
+.project-link {
+  padding: 12px 16px;
+
+  border: 1px solid #444;
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.project-link:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 800px) {
+  .projects-page {
+    padding: 110px 20px 80px;
+  }
+
+  .projects-hero {
+    padding: 50px 0 60px;
+  }
+
+  .projects-hero h1 {
+    font-size: 64px;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: 400px;
+  }
+}
+
