@@ -199,3 +199,103 @@ a {
 .navbar-menu a:hover {
   color: #fff;
 }
+/* ABOUT PAGE */
+
+.about-hero {
+  padding: 140px 0 120px;
+}
+
+.about-hero h1 {
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -4px;
+  margin-bottom: 50px;
+}
+
+.about-intro {
+  max-width: 700px;
+  color: #aaa;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.about-story {
+  border-top: 1px solid #222;
+  padding: 120px 0;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.about-story h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.1;
+}
+
+.about-text {
+  color: #aaa;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.about-text p + p {
+  margin-top: 25px;
+}
+
+.about-skills {
+  border-top: 1px solid #222;
+  padding: 120px 0;
+}
+
+.about-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-skill-card {
+  border: 1px solid #292929;
+  padding: 35px;
+  min-height: 300px;
+}
+
+.about-skill-card span {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.about-skill-card h2 {
+  margin: 60px 0 20px;
+  font-size: 1.8rem;
+}
+
+.about-skill-card p {
+  color: #999;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 100px 0 80px;
+  }
+
+  .about-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .about-story-grid,
+  .about-skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story {
+    padding: 80px 0;
+  }
+
+  .about-skills {
+    padding: 80px 0;
+  }
+}
