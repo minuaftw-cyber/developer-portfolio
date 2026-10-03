@@ -6,8 +6,14 @@ const projects = [
     title: "Developer Portfolio",
     category: "Web Application",
     description:
-      "A personal developer portfolio built to present my technical skills, projects, and experience through an interactive web application.",
+      "A personal developer portfolio designed and developed from the ground up to showcase my technical skills, projects, and ability to build and deploy modern web applications.",
     technologies: ["Next.js", "TypeScript", "CSS", "Git"],
+    skills: [
+      "Frontend Development",
+      "Responsive UI",
+      "Component Design",
+      "Git Workflow",
+    ],
     href: "/",
   },
   {
@@ -15,8 +21,22 @@ const projects = [
     title: "Project EK",
     category: "AI / Local AI",
     description:
-      "An experimental AI VTuber project designed to work with local AI systems, exploring conversational AI and interactive character systems.",
-    technologies: ["Ollama", "Local AI", "Python", "Web"],
+      "A local AI VTuber system built from the ground up to create an interactive Thai-speaking virtual character using locally controlled AI components, voice processing, memory, vision, and conversational systems.",
+    technologies: [
+      "Python",
+      "Ollama",
+      "Local LLM",
+      "TTS",
+      "RVC",
+      "STT",
+    ],
+    skills: [
+      "AI Integration",
+      "System Architecture",
+      "Audio Processing",
+      "Local AI",
+      "Python Development",
+    ],
     href: "/projects/project-ek",
   },
 ];
@@ -36,7 +56,8 @@ export default function ProjectsPage() {
 
         <p>
           A collection of systems, applications, and experiments
-          I&apos;ve built or contributed to.
+          I&apos;ve built to explore technology, solve practical
+          problems, and develop new technical skills.
         </p>
       </section>
 
@@ -44,7 +65,9 @@ export default function ProjectsPage() {
       <section className="projects-list">
         {projects.map((project) => (
           <article className="project-card" key={project.number}>
-            <div className="project-number">{project.number}</div>
+            <div className="project-number">
+              {project.number}
+            </div>
 
             <div className="project-content">
               <div className="project-category">
@@ -55,12 +78,27 @@ export default function ProjectsPage() {
 
               <p>{project.description}</p>
 
+              {/* Technologies */}
               <div className="project-technologies">
                 {project.technologies.map((technology) => (
                   <span key={technology}>{technology}</span>
                 ))}
               </div>
 
+              {/* Skills demonstrated */}
+              <div className="project-skills">
+                <div className="project-skills-label">
+                  SKILLS DEMONSTRATED
+                </div>
+
+                <div className="project-skills-list">
+                  {project.skills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Project link */}
               <Link
                 href={project.href}
                 className="project-link"
