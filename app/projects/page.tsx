@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const projects = [
   {
     number: "01",
@@ -6,6 +8,7 @@ const projects = [
     description:
       "A personal developer portfolio built to present my technical skills, projects, and experience through an interactive web application.",
     technologies: ["Next.js", "TypeScript", "CSS", "Git"],
+    href: "/",
   },
   {
     number: "02",
@@ -14,6 +17,7 @@ const projects = [
     description:
       "An experimental AI VTuber project designed to work with local AI systems, exploring conversational AI and interactive character systems.",
     technologies: ["Ollama", "Local AI", "Python", "Web"],
+    href: "/projects/project-ek",
   },
 ];
 
@@ -27,7 +31,7 @@ export default function ProjectsPage() {
         <h1>
           Projects
           <br />
-          & Experiments.
+          &amp; Experiments.
         </h1>
 
         <p>
@@ -57,9 +61,12 @@ export default function ProjectsPage() {
                 ))}
               </div>
 
-              <button className="project-link">
+              <Link
+                href={project.href}
+                className="project-link"
+              >
                 View Project →
-              </button>
+              </Link>
             </div>
           </article>
         ))}
