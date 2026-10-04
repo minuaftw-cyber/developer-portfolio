@@ -285,6 +285,108 @@ a {
 .navbar-menu a:hover {
   color: var(--accent);
 }
+
+/* Mobile menu (phones only — tablet and desktop keep the full menu) */
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    position: relative;
+    z-index: 50;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+    color: var(--tone-26);
+
+    cursor: pointer;
+  }
+
+  .navbar-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    border-radius: 1px;
+    background: currentColor;
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.2s ease;
+  }
+
+  .navbar-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .navbar-menu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    gap: 0;
+
+    padding: 4px 4% 12px;
+
+    border-bottom: 1px solid var(--tone-08);
+    background: var(--tone-01);
+    box-shadow: 0 18px 30px -18px var(--tone-12);
+  }
+
+  .navbar-menu.is-open {
+    display: flex;
+  }
+
+  .navbar-menu a {
+    padding: 14px 0;
+
+    border-bottom: 1px solid var(--tone-08);
+
+    font-size: 1.05rem;
+  }
+
+  .navbar-menu a:last-child {
+    border-bottom: 0;
+  }
+
+  .navbar-menu a[aria-current="page"] {
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .navbar-toggle span {
+    transition: none;
+  }
+}
   /* =========================
    Projects Page
    ========================= */
@@ -465,7 +567,7 @@ a {
   }
 
   .projects-hero h1 {
-    font-size: 64px;
+    font-size: clamp(40px, 15vw, 64px);
   }
 
   .projects-list {
@@ -1241,7 +1343,7 @@ a {
   }
 
   .store-header h1 {
-    font-size: 64px;
+    font-size: clamp(40px, 15vw, 64px);
   }
 
   .store-cart {
@@ -1257,6 +1359,14 @@ a {
     flex-direction: column;
   }
 
+}
+
+/* Ines Store: keep two product columns on tablets */
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .store-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 /* =========================
    Technical Lab
@@ -1386,6 +1496,9 @@ a {
   color: var(--tone-26);
 
   cursor: pointer;
+
+  flex-shrink: 0;
+  white-space: nowrap;
 
   transition:
     background 0.2s ease,
@@ -1955,7 +2068,7 @@ a {
   }
 
   .lab-hero h1 {
-    font-size: 64px;
+    font-size: clamp(40px, 15vw, 64px);
   }
 
   .lab-notice {
