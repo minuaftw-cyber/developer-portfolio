@@ -3,6 +3,29 @@ import Link from "next/link";
 const projects = [
   {
     number: "01",
+    title: "Ines Kesselring Hub",
+    category: "Full-Stack Web Application",
+    description:
+      "The website and backoffice for my YouTube channel, live in production: a live stream countdown, videos synced from YouTube, member accounts with roles, and a Django backoffice for staff. Tested in CI and monitored around the clock.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Django",
+      "PostgreSQL",
+      "Docker",
+      "GitHub Actions",
+    ],
+    skills: [
+      "REST API Design",
+      "Authentication & Roles",
+      "Deployment",
+      "Monitoring",
+      "CI / CD",
+    ],
+    href: "/projects/ines-kesselring-hub",
+  },
+  {
+    number: "02",
     title: "Developer Portfolio",
     category: "Web Application",
     description:
@@ -17,7 +40,7 @@ const projects = [
     href: "/",
   },
   {
-    number: "02",
+    number: "03",
     title: "Project EK",
     category: "AI / Local AI",
     description:
